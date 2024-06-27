@@ -1,7 +1,11 @@
 const Customer = require("../models/customer");
 const Booking = require("../models/booking");
+const Inquiry = require("../models/inquiry");
 // create a router instance/object to define our routes
 const router = require("express").Router();
+
+// route functionality
+// be able to post a customer in the database from the front end
 
 // get all customers
 router.get("/customers", function (req, res) {
