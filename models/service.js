@@ -21,6 +21,11 @@ const Service = sequelize.define(
     description: {
       type: Sequelize.STRING,
     },
+    addons: {
+      type: Sequelize.JSON,
+      allowNull: true,
+      defaultValue: ["addon 1", "addon 2"],
+    },
   },
   {
     timestamps: false,

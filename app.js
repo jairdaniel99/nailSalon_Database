@@ -6,6 +6,8 @@ const sequelize = require("./config");
 const Customer = require("./models/customer");
 // import customer routes
 const customerRoutes = require("./routes/customer");
+//import inquiry routes
+const inquiryRoutes = require("./routes/inquiry");
 // import cors middleware
 const cors = require("cors");
 
@@ -28,6 +30,9 @@ app.use(cors());
 
 //use customer routes
 app.use(customerRoutes);
+
+// use inquiry routes
+app.use(inquiryRoutes);
 
 // Process is an object that represents the current nodeJS process
 // process.env is an object that contains the current environment variables

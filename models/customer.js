@@ -34,15 +34,18 @@ const Customer = sequelize.define(
     timestamps: true,
   }
 );
-// define hasMany relation
-Customer.hasMany(Service, {
-  foreignKey: "customer_id",
-  onDelete: "CASCADE",
-});
 
-// hasMany needs a belongsTo to work!
-Service.belongsTo(Customer, {
-  foreignKey: "customer_id",
-});
+// if using customer credentials:
+
+// // define hasMany relation
+// Customer.hasMany(Inquiry, {
+//   foreignKey: "customer_id",
+//   onDelete: "CASCADE",
+// });
+
+// // hasMany needs a belongsTo to work!
+// Inquiry.belongsTo(Customer, {
+//   foreignKey: "customer_id",
+// });
 
 module.exports = Customer;

@@ -18,19 +18,19 @@ const Inquiry = sequelize.define(
       allowNull: false,
     },
     name: {
-      type: Sequelize.TEXT,
+      type: Sequelize.STRING,
       allowNull: false,
     },
     email: {
-      type: Sequelize.TEXT,
+      type: Sequelize.STRING,
       allowNull: false,
     },
     phone: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.STRING,
       allowNull: false,
     },
-    service: {
-      type: Sequelize.STRING,
+    addons: {
+      type: Sequelize.TEXT,
       allowNull: true,
     },
     information: {
