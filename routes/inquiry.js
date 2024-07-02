@@ -42,8 +42,8 @@ router.post("/inquiries", function (req, res) {
     name: req.body.name,
     email: req.body.email,
     phone: req.body.phone,
+    service: req.body.service,
     addons: req.body.addons,
-    service_id: req.body.service_id,
     information: req.body.information,
   };
   // create a new inquiry record in the database

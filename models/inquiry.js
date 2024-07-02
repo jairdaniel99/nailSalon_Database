@@ -9,7 +9,7 @@ const Service = require("./service");
 // sequalize will automatically create a table called customers
 // we want to avoid the automatic pluralization of studen
 const Inquiry = sequelize.define(
-  "Inquiry",
+  "inquiry",
   {
     id: {
       type: Sequelize.INTEGER,
@@ -19,18 +19,23 @@ const Inquiry = sequelize.define(
     },
     name: {
       type: Sequelize.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     email: {
       type: Sequelize.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     phone: {
       type: Sequelize.STRING,
-      allowNull: false,
+      allowNull: true,
+      defaultValue: "-1",
+    },
+    service: {
+      type: Sequelize.STRING,
+      allowNull: true,
     },
     addons: {
-      type: Sequelize.TEXT,
+      type: Sequelize.STRING,
       allowNull: true,
     },
     information: {
@@ -45,14 +50,14 @@ const Inquiry = sequelize.define(
 
 // an inquiry can have one service
 // a service can have many inquiries
-Service.hasMany(Inquiry, {
-  foreignKey: "service_id",
-  onDelete: "CASCADE",
-});
+// Service.hasMany(Inquiry, {
+//   foreignKey: "service_id",
+//   onDelete: "CASCADE",
+// });
 
-// hasMany needs a belongsTo to work!
-Inquiry.belongsTo(Service, {
-  foreignKey: "service_id",
-});
+// // hasMany needs a belongsTo to work!
+// Inquiry.belongsTo(Service, {
+//   foreignKey: "service_id",
+// });
 
 module.exports = Inquiry;
